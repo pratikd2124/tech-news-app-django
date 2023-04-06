@@ -28,17 +28,17 @@
   </nav>
   {% comment %}  {% endcomment %}
 
-  <div class="container d-flex flex-column justify-content-center my-4 col-lg-6">
-    {%for item in news%}
-    <div class="card " style="max-width: 38rem;background-color: rgba(252, 245, 255, 0.1); backdrop-filter:blur(7px);box-shadow: 0 5px 50px rgba(0,0,0,0.5);border-radius:10px;">
+  <div class="container d-flex flex-column justify-content-center  my-4 col-lg-6">
+    {%for data in datas %}
+    <div class="card mb-4" style="max-width: 38rem;background-color: rgba(252, 245, 255, 0.1); backdrop-filter:blur(7px);box-shadow: 0 5px 50px rgba(0,0,0,0.5);border-radius:10px;">
         <div class="card-body ">
-          <h5 class="card-title p-2" style="color:white;">{{item.title}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted px-2">Card subtitle</h6>
+          <h5 class="card-title p-2" style="color:white;">{{data.title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted px-2">{{data.date}}</h6>
           <div class="container mx-auto w-75">
-          <img class="card-img-top img-fluid" src="{{item.img}}" alt="Card image cap">
+          <img class="card-img-top img-fluid" src="{{data.img}}" alt="Card image cap">
           </div>
-          <p class="card-text" style="color:white;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a role="button" class="btn btn-sm btn-outline-light" href="#">See more</a>
+          <p class="card-text" style="color:white;">{{data.content}}...</p>.</p>
+          <a role="button" class="btn btn-sm btn-outline-light" target="_blank" href="{{data.link}}">See more</a>
         </div>
       </div>
       {% endfor %}
